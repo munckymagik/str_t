@@ -3,6 +3,8 @@
 
 #include <stddef.h>
 
+#define MAX_STR_LEN 100000000
+
 // Structure that will hold our string
 typedef struct str {
   const char* ptr;
