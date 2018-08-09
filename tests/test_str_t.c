@@ -12,11 +12,6 @@ void tearDown(void)
 {
 }
 
-void test_hello(void)
-{
-   TEST_ASSERT_EQUAL_STRING("Hello, World!", hello());
-}
-
 void test_creating_new_raw_zero_terminated() {
   str_t* str = str_new_from_zero_terminated("Hello matey.");
   TEST_ASSERT_NOT_NULL(str);
@@ -51,7 +46,6 @@ int main(void)
 {
    UnityBegin("tests/test_str_t.c");
 
-   RUN_TEST(test_hello);
    RUN_TEST(test_creating_new_raw_zero_terminated);
    RUN_TEST(test_creating_new_raw_parts);
    RUN_TEST(test_create_empty_string);
