@@ -28,7 +28,7 @@ void str_free(str_t* p_str);
 str_err_t str_copy_to_zero_terminated(const str_t* p_source, char* p_destination, size_t dest_size);
 
 // Assignment
-void str_copy(const str_t* p_source, str_t* p_destination);
+str_t* str_copy(const str_t* p_source);
 void str_move(const str_t* p_source, str_t* p_destination);
 
 // Operators
