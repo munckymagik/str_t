@@ -62,7 +62,8 @@ str_t* str_concat(const str_t* p_str, str_t* p_other){
   char* concat_str = calloc(p_str->len + p_other->len, sizeof(char));
   strncpy(concat_str, p_str->ptr, p_str->len);
 
-  strncpy(concat_str + p_str->len, p_other->ptr, p_other->len);
+  char* copy_other_to = concat_str + sizeof(char) * p_str->len;
+  strncpy(copy_other_to, p_other->ptr, p_other->len);
 
   str_t* result = malloc(sizeof(str_t));
   result->len = p_str->len + p_other->len;
