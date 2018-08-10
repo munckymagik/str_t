@@ -20,6 +20,14 @@ str_t* str_new_from_raw_parts(const char* ptr, size_t len) {
   return result;
 }
 
+void str_move(const str_t* p_source, str_t* p_destination) {
+
+  // There's a danger that p_destination->ptr is real and we leak memory here
+  // OTOH if it isn't we don't want to be freeing unallocated memory.
+  p_destination->ptr = p_source->ptr;
+  p_destination->len = p_source->len;
+}
+
 void str_free(str_t* p_str) {
   // I don't think I can test this
   free((void *) p_str->ptr);
