@@ -94,19 +94,18 @@ void test_str_concat() {
 }
 
 void test_str_move() {
-  // Guessing at the semantics. This seems dangerous as we could
-  // accidentally free an array twice;
-
   str_t* source = str_new_from_zero_terminated("hi");
-  str_t dest;
+  str_t* dest;
 
-  str_move(source, &dest);
+  str_move(&source, &dest);
 
-  TEST_ASSERT_EQUAL_INT(2, dest.len);
-  TEST_ASSERT_EQUAL_STRING_LEN("hi", dest.ptr, 2);
+  TEST_ASSERT_NULL(source);
 
-  str_free(source);
+  TEST_ASSERT_EQUAL_INT(2, dest->len);
+  TEST_ASSERT_EQUAL_STRING_LEN("hi", dest->ptr, 2);
+  str_free(dest);
 }
+
 int main(void)
 {
    UnityBegin("tests/test_str_t.c");
