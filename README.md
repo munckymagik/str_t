@@ -1,10 +1,10 @@
-# C-string Wrapper Exercise
+# C-string Information Exercise
 
-An Exercism.io-like exercise to create a C library that provides a wrapper type for strings
+An Exercism.io-like exercise to simulate a method that provides complicated information.
 
 # The task
 
-To build a simple wrapper around native C strings.
+To return various information about a string.
 
 The header in `include/str_t.h` declares signatures for the functions you need to implement.
 
@@ -12,7 +12,7 @@ Add test to `tests/test_str_t.c` to specify how the functions should behave.
 
 Remember to ask yourself: what parts of the code should "own" and thus free any memory you allocate?
 
-**BEWARE** there are gotchas hidden in this starter code. It is your task to find them.
+**BEWARE** there could be gotchas hidden in this starter code. It is your task to find them.
 
 You MAY change the signatures in the header if you need to.
 
@@ -20,8 +20,7 @@ You MAY change the signatures in the header if you need to.
 
 Understand:
 
-* how low-level C's string handling is
-* how higher-level languages (possibly implemented in C) might wrap low level C strings to add some safety
+* how a method can return structure information. In this case it is random facts about a string, but the same issues may apply when returning a record from a database or an API call.
 * the tricky problem of memory ownership and when/where to free allocated memory
 * how easy it is to forget to free memory you have allocated
 * the difference between passing a struct as a pointer versus by value.
